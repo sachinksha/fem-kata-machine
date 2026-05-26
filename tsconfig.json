@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "outDir": "dist",
         "allowJs": true,
         "noImplicitAny": true,
         "strictNullChecks": true,
@@ -8,13 +7,13 @@
         "noImplicitReturns": true,
         "esModuleInterop": true,
         "target": "esnext",
-        "module": "commonjs",
-        "baseUrl": "src",
+        "module": "nodenext",
         "paths": {
             "@code/*": [
-                "day1/*"
+                "./src/day1/*"
             ]
-        }
+        },
+        
     },
     "include": [
         "./src/**/*"

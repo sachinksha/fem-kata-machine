@@ -1,26 +1,28 @@
-function partition(arr: number[], low: number, high: number): number {
-    const pivot = arr[high];
-    let i = low - 1;
-
-    for (let j = low; j < high; j++) {
-        if (arr[j] < pivot) {
-            i++;
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+function partition(arr: number[], lo: number, hi: number): number {
+    const pivot = arr[hi];
+    let idx = lo - 1;
+    for (let i = lo; i < hi; i++) {
+        if (arr[i] < pivot) {
+            idx++;
+            const temp = arr[idx];
+            arr[idx] = arr[i];
+            arr[i] = temp;
         }
     }
-    i++;
-    [arr[i], arr[high]] = [arr[high], arr[i]];
-    return i;
+    idx++;
+    arr[hi] = arr[idx];
+    arr[idx] = pivot;
+    return idx;
 }
 
-function quick_sort_helper(arr: number[], low: number, high: number): void {
-    if (low < high) {
-        const pi = partition(arr, low, high);
-        quick_sort_helper(arr, low, pi - 1);
-        quick_sort_helper(arr, pi + 1, high);
+function qs(arr: number[], lo: number, hi: number): void {
+    if (lo < hi) {
+        const pi = partition(arr, lo, hi);
+        qs(arr, lo, pi - 1);
+        qs(arr, pi + 1, hi);
     }
 }
 
 export default function quick_sort(arr: number[]): void {
-    quick_sort_helper(arr, 0, arr.length - 1);
+    qs(arr, 0, arr.length - 1);
 }
