@@ -1,4 +1,20 @@
+function search(node:BinaryNode<number> | null, needle:number):boolean {
+    if(!node) {
+        return false;
+    }
+    if(node.value === needle){
+        return true;
+    }
+    else if(node.value < needle) {
+        return search(node.right, needle);
+    }
+    else {
+        return search(node.left, needle);
+    }
+}
 export default function dfs(
     head: BinaryNode<number>,
     needle: number,
-): boolean {}
+): boolean {
+    return search(head, needle);
+}
