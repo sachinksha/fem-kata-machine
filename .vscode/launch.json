@@ -10,7 +10,7 @@
             "name": "Run jest",
             "runtimeExecutable": "jest",
             "cwd": "${workspaceFolder}",
-            "args": ["Doubly"],
+            "args": ["Dijkstra"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
         }
