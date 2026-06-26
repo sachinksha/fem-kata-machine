@@ -7,10 +7,10 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Run jest",
-            "runtimeExecutable": "jest",
+            "name": "Run code",
+            "runtimeExecutable": "node",
             "cwd": "${workspaceFolder}",
-            "args": ["Dijkstra"],
+            "args": ["src/day1/ScheduleProblem.ts"],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
         }
